@@ -2,7 +2,7 @@ public class MyFirstApex {
 
     Integer mySalary = 10000;
     String EmpName = 'Kuamr';
-    Static Integer empcount = 100;
+    static Integer empcount = 100;
 
     public MyFirstApex()
     {
