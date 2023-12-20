@@ -108,17 +108,3 @@ Datetime mycurrentdatetime1 = Datetime.newInstance(2023, 12, 14, 11, 10, 30);
 System.debug('My current time (1 hours ahead) GMT   is ' + mycurrentdatetime1);//11:10, 16:44:10, 6:10:30, 5:40:30
 System.debug('My current time (1 hours ahead) local is ' + mycurrentdatetime1.format());
 
-
-//Home work
-// Input 
-//Start Date: 14-12-2023
-//End Date : 25-04-2024
-
-//Output
-14-12-2023 // 1+4 = 5, 14+5 = 19
-19-12-2023 // 1+9 = 10, 19+10 = 29
-29-12-2023 // 2+9=11, 29+11 = 40, 40-31= 9
-09-01-2024 //
-.............
-25-04-2024
-
