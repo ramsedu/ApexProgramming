@@ -13,10 +13,10 @@ System.debug('mydatetime(GMT) format = ' + mydatetime.formatGmt('EEE, MMM d yyyy
 
 //System.TypeException: Invalid date/time: 10/14/2011, 11:46 AM
 //Datetime dt = DateTime.parse('10/14/2011, 11:46 AM');
-Datetime dt = DateTime.parse('14/10/2011, 11:46 AM');
+Datetime dt = DateTime.parse('14/10/2011, 11:46 am');
 String myDtString = dt.format();
 //system.assertEquals(myDtString, '14/10/2011, 11:45 AM');
-Boolean iscorrectdateformat = (myDtString == '14/10/2011, 11:45 AM');
+Boolean iscorrectdateformat = (myDtString == '14/10/2011, 11:46 am');
 system.debug('iscorrectdateformat = '+ iscorrectdateformat);
 System.debug('myDtString = ' + myDtString);
 //System.AssertException: Assertion Failed: Expected: 14/10/2011, 11:46 am, Actual: 10/14/2011, 11:46 AM
