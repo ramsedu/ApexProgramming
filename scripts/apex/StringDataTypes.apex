@@ -1,13 +1,13 @@
-String Name = 'Kumar';
+/* String Name = 'Kumar';
 String num = '100';
-Integer num = 200;
+Integer num = 200; */
 //csv file
 
 //Name,Age,Salary,Dob
 //Kumar,25,5000,12-12-2023
 //Anand,25,5000,12-12-2023
 
-String records= 'Anandkumar Selvam,25,5000,12-12-2023';
+String records= 'Anandkumar Selvam,25,5000,12-12-2023,Senior Engineer';
 String name = records.substring(0,5);
 System.debug('Name = ' + name);
 String name1 = records.substringBefore(',');
@@ -27,7 +27,7 @@ Date dob;
 
 Integer pos = 0;
 for(String str : allcols) {
-    if(pos == 0){
+/*     if(pos == 0 || pos == 1  ){
         empName = str;
     }   
     else if(pos == 1){
@@ -44,7 +44,48 @@ for(String str : allcols) {
         Integer MM = Integer.valueOf(mydate[1]);
         Integer yy = Integer.valueOf(mydate[2]);
         dob = date.newInstance(yy, MM, dd);
+   } */
+
+   //Switch Statements
+   
+   switch on pos {
+   when 0 {
+       empName = str;
    }
+   when 1 {
+        age = Integer.valueOf(str);
+   }
+   when 2 {
+       sal = Integer.valueOf(str);
+   }
+   when 3 {
+       String[] mydate = str.split('-');
+        System.debug(mydate);
+        Integer dd = Integer.valueOf(mydate[0]);
+        Integer MM = Integer.valueOf(mydate[1]);
+        Integer yy = Integer.valueOf(mydate[2]);
+        dob = date.newInstance(yy, MM, dd);
+   }
+   when else {
+       System.debug('default');
+   }
+
+    }
+
+    switch on (pos + pos) {
+        when 1 {
+            System.debug('True = ' + str);
+        }
+        when 2 {
+            System.debug('false = ' + str);
+        }
+        when else {
+       System.debug('default');
+   }
+
+}
+if ((pos + pos) == ((pos + pos)))
+   System.debug('If = ' + str);
         
        // dob = Date.valueOf(str);
     pos++; // pos = pos + 1;
@@ -63,10 +104,46 @@ for (Integer i : myInts) {
 } */
 
 
-Apex script unhandled exception by user/organization: 005Ek000002HZMn/00DEk0000003SSn
-Source organization: 00Df4000000nCJh (null)
-Failed to process batch for class 'RedesignNL_AssetConfigUpdate' for job id '707Ek00000J1csO'
+String result;
+Integer mark = 40;
+/* if (mark >= 50) {
+    result = 'Pass';
+}
+else {
+    result = 'Fail';
+}
+System.debug('Result: ' + result); */
 
-caused by: System.LimitException: Too many callouts: 101
+result = mark >= 50 ? 'Pass' : 'Fail';
+System.debug('Result: ' + result);
 
-Class.RedesignNL_AssetConfigUpdate.execute: line 64, column 1
+if (mark >= 50) {
+    //result = 'Pass';
+    System.debug('Result: Pass');
+}
+else {
+    //result = 'Fail';
+    System.debug('Result: Fail' );
+}
+
+
+Integer a = 10;
+Integer b;
+b=a;
+b= 40;
+
+
+//Loops
+Integer count = 1;
+
+while (count > 0) {
+    count++;
+    System.debug(count);
+}
+
+Integer count = 1;
+
+do {
+    count++;
+    System.debug(count);
+} while (count > 11);
