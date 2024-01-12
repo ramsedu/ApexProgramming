@@ -27,18 +27,25 @@ if (names != null)
 }
 
 Integer[] myInts = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+List<Integer> myInts1 = new List<Integer>{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+List<Integer> myInts2 = new List<Integer>();
+
 
 for (Integer i : myInts) {
     System.debug(i);
 }
 
+SELECT Id, Name, Phone
+  FROM Account
+  
+//SOQL ==> Salesforce Object Query Language
 Account[] accts = [SELECT Id, Name, Phone
                     FROM Account 
                     ORDER BY Name ASC
                     LIMIT 50000];
 
 for(Account ac : accts) {
-        System.debug('Account Name = ' + ac.Name +' & Phone = ' + ac.Phone);
+        System.debug('Account Name = ' + ac.Name +' & Phone = ' + ac.Phone + ' Site = ' + ac.Sites);
     }
 
     System.debug(accts.size());
