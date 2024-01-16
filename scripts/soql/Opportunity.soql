@@ -1,0 +1,9 @@
+SELECT  Account,
+        AVG(Amount), 
+        Sum(Amount) , 
+        COUNT(amount), 
+        MIN(amount),
+        max(amount),
+        max(CloseDate),
+        min(name)
+FROM Opportunity
