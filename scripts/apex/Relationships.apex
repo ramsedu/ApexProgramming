@@ -21,6 +21,7 @@ List<Opportunity> listOpps = [SELECT  Account.Name, Account.Owner.Name, Parent_A
         Closedate
 FROM Opportunity];
 
+
 for(Opportunity opp :listOpps ){
     System.debug('Account Name:' + opp.Account.Name);
     System.debug('Account Owner Name:' + opp.Account.Owner.Name);
@@ -74,7 +75,8 @@ for(Account ac :listAccounts ){
 
 List<Account> listAccounts2 = [SELECT Name, AccountNumber, AnnualRevenue,
                                 (SELECT Name, Amount, Closedate FROM ParentAccountOpportunities__r )
-                                FROM Account];
+                                FROM Account
+                                WHERE CreatedById IN (SELECT Id FROM User WHERE isActive= true) ];
 
 Boolean isOppFound = true;
 
