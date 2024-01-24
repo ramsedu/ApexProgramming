@@ -79,6 +79,7 @@ Map<Integer, String> MyStrings2 = new Map<Integer, String>();
 for (Integer i = 0; i < 20; i++) {
     MyStrings2.put(i, (i+1)+'');
 }
+
 System.debug('Map = ' + MyStrings2);
 
 for (Integer i : MyStrings2.keySet()) {
@@ -90,3 +91,40 @@ for (String i : MyStrings2.values()) {
 }
 
 System.debug('To Find 19 = ' +MyStrings2.containsKey(19));
+
+ApexDemoVS apexobj1 = new ApexDemoVS();
+List<String> conts = apexobj1.getContactName('United Oil & Gas Corp.');
+List<String> conts1 = apexobj1.getContactName('Express Logistics and Transport');
+List<String> conts2 = apexobj1.getContactName('Grand Hotels & Resorts Ltd');
+
+conts.addAll(conts1);
+conts.addAll(conts2);
+System.Debug('===============================');
+System.Debug('Contact Details');
+System.Debug('===============================');
+for(String c : conts ) {
+    System.debug(c);
+}
+/* for(String c : conts1 ) {
+    System.debug(c);
+} */
+
+List<String> listacctnames = new List<String>{'United Oil & Gas Corp.', 'Express Logistics and Transport', 'Grand Hotels & Resorts Ltd'};
+ApexDemoVS apexobj1 = new ApexDemoVS();
+List<String> conts = apexobj1.getContactName(listacctnames);
+System.Debug('===============================');
+System.Debug('Contact Details');
+System.Debug('===============================');
+for(String c : conts ) {
+    System.debug(c);
+}
+
+List<String> listacctnames = new List<String>{'United Oil & Gas Corp.', 'Express Logistics and Transport', 'Grand Hotels & Resorts Ltd'};
+//ApexDemoVS apexobj1 = new ApexDemoVS();
+List<String> conts = ApexDemoVS.getContactNames(listacctnames);
+System.Debug('===============================');
+System.Debug('Contact Details');
+System.Debug('===============================');
+for(String c : conts ) {
+    System.debug(c);
+}
